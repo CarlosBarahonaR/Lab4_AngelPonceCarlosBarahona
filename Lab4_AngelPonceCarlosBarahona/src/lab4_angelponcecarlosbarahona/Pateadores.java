@@ -13,7 +13,7 @@ public class Pateadores extends Jugadores{
 
     public Pateadores(int HabilidadPateadora, int fuerza, int habilidadRegate, 
             String nombre, String apodo, String numcamiseta, String equipofutfav, String equipobalfav, 
-            String jugfav, String mayorEdad, String nacimiento, int NumeroEstrellas, String atacar) {
+            String jugfav, String mayorEdad, String nacimiento, int NumeroEstrellas) {
         super(nombre, apodo, numcamiseta, equipofutfav, equipobalfav, jugfav, mayorEdad, nacimiento, 
                 NumeroEstrellas);
         this.setHabilidadPateadora(HabilidadPateadora);
