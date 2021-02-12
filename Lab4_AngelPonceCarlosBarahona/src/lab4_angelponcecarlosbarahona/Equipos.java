@@ -5,16 +5,12 @@
  */
 package lab4_angelponcecarlosbarahona;
 
-/**
- *
- * @author Admin
- */
 import java.util.ArrayList;
 
 public class Equipos {
-    private String nombre, estadio, pais, nombreEntrenador, nombreDuen, nombreMascota, fechaCreacion, Color;
+    private String nombre, estadio, pais, nombreEntrenador, nombreDuen, nombreMascota, fechaCreacion, color;
     ArrayList<Jugadores> jugadores = new ArrayList();
-
+    
     public Equipos(String nombre, String estadio, String pais, String nombreEntrenador, String nombreDuen, 
             String nombreMascota, String fechaCreacion, String Color, ArrayList<Jugadores> jugadores) {
         this.nombre = nombre;
@@ -24,7 +20,7 @@ public class Equipos {
         this.nombreDuen = nombreDuen;
         this.nombreMascota = nombreMascota;
         this.fechaCreacion = fechaCreacion;
-        this.Color = Color;
+        this.color = Color;
         this.jugadores=jugadores;
     }
 
@@ -85,11 +81,11 @@ public class Equipos {
     }
 
     public String getColor() {
-        return Color;
+        return color;
     }
 
     public void setColor(String Color) {
-        this.Color = Color;
+        this.color = Color;
     }
 
     public ArrayList<Jugadores> getJugadores() {
@@ -98,6 +94,19 @@ public class Equipos {
 
     public void setJugadores(ArrayList<Jugadores> jugadores) {
         this.jugadores = jugadores;
+    }
+
+    @Override
+    public String toString() {
+        return "Equipos{" + "nombre=" + nombre 
+                + ", estadio=" + estadio 
+                + ", pais=" + pais 
+                + ", nombreEntrenador=" + nombreEntrenador 
+                + ", nombreDuen=" + nombreDuen 
+                + ", nombreMascota=" + nombreMascota 
+                + ", fechaCreacion=" + fechaCreacion 
+                + ", color=" + color 
+                + ", jugadores=" + jugadores + '}';
     }
     
     

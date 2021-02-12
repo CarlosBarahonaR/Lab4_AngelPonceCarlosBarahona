@@ -15,9 +15,9 @@ public class Tiradores extends Jugadores{
 
     public Tiradores(int tirodetres, int tirodedos, int manejodebalon, 
             String nombre, String apodo, String numcamiseta, String equipofutfav, String equipobalfav, 
-            String jugfav, String mayorEdad, String nacimiento, int NumeroEstrellas, String atacar) {
+            String jugfav, String mayorEdad, String nacimiento, int NumeroEstrellas) {
         super(nombre, apodo, numcamiseta, equipofutfav, equipobalfav, jugfav, mayorEdad, nacimiento, 
-                NumeroEstrellas, atacar);
+                NumeroEstrellas);
         this.tirodetres = tirodetres;
         this.tirodedos = tirodedos;
         this.manejodebalon = manejodebalon;
