@@ -8,10 +8,11 @@ package lab4_angelponcecarlosbarahona;
 import java.util.ArrayList;
 
 public class Equipos {
+
     private String nombre, estadio, pais, nombreEntrenador, nombreDuen, nombreMascota, fechaCreacion, color;
     ArrayList<Jugadores> jugadores = new ArrayList();
-    
-    public Equipos(String nombre, String estadio, String pais, String nombreEntrenador, String nombreDuen, 
+
+    public Equipos(String nombre, String estadio, String pais, String nombreEntrenador, String nombreDuen,
             String nombreMascota, String fechaCreacion, String Color, ArrayList<Jugadores> jugadores) {
         this.nombre = nombre;
         this.estadio = estadio;
@@ -21,7 +22,7 @@ public class Equipos {
         this.nombreMascota = nombreMascota;
         this.fechaCreacion = fechaCreacion;
         this.color = Color;
-        this.jugadores=jugadores;
+        this.jugadores = jugadores;
     }
 
     public String getNombre() {
@@ -98,17 +99,15 @@ public class Equipos {
 
     @Override
     public String toString() {
-        return "Equipos{" + "nombre=" + nombre 
-                + ", estadio=" + estadio 
-                + ", pais=" + pais 
-                + ", nombreEntrenador=" + nombreEntrenador 
-                + ", nombreDuen=" + nombreDuen 
-                + ", nombreMascota=" + nombreMascota 
-                + ", fechaCreacion=" + fechaCreacion 
-                + ", color=" + color 
+        return "Equipos{" + "nombre=" + nombre
+                + ", estadio=" + estadio
+                + ", pais=" + pais
+                + ", nombreEntrenador=" + nombreEntrenador
+                + ", nombreDuen=" + nombreDuen
+                + ", nombreMascota=" + nombreMascota
+                + ", fechaCreacion=" + fechaCreacion
+                + ", color=" + color
                 + ", jugadores=" + jugadores + '}';
     }
-    
-    
-    
+
 }

@@ -6,7 +6,7 @@
 package lab4_angelponcecarlosbarahona;
 
 public class Jugadores {
-    
+
     private String nombre, apodo, numcamiseta, equipofutfav, equipobalfav, jugfav, mayorEdad; //si es mayor de edad o no
     private String nacimiento;
     private int NumeroEstrellas;
@@ -14,8 +14,8 @@ public class Jugadores {
     public Jugadores() {
     }
 
-    public Jugadores(String nombre, String apodo, String numcamiseta, String equipofutfav, 
-            String equipobalfav, String jugfav, String mayorEdad, String nacimiento, 
+    public Jugadores(String nombre, String apodo, String numcamiseta, String equipofutfav,
+            String equipobalfav, String jugfav, String mayorEdad, String nacimiento,
             int NumeroEstrellas) {
         this.nombre = nombre;
         this.apodo = apodo;
@@ -97,28 +97,26 @@ public class Jugadores {
     }
 
     public void setNumeroEstrellas(int NumeroEstrellas) {
-        if(NumeroEstrellas>=1 && NumeroEstrellas<=5){
+        if (NumeroEstrellas >= 1 && NumeroEstrellas <= 5) {
             this.NumeroEstrellas = NumeroEstrellas;
         }
     }
 
-    public void Atacar(){
+    public void Atacar() {
         System.out.println();
     }
-    
+
     @Override
     public String toString() {
-        return "Jugadores{" + "nombre=" + nombre 
-                + ", apodo=" + apodo 
-                + ", numcamiseta=" + numcamiseta 
-                + ", equipofutfav=" + equipofutfav 
-                + ", equipobalfav=" + equipobalfav 
-                + ", jugfav=" + jugfav 
-                + ", mayorEdad=" + mayorEdad 
-                + ", nacimiento=" + nacimiento 
+        return "Jugadores{" + "nombre=" + nombre
+                + ", apodo=" + apodo
+                + ", numcamiseta=" + numcamiseta
+                + ", equipofutfav=" + equipofutfav
+                + ", equipobalfav=" + equipobalfav
+                + ", jugfav=" + jugfav
+                + ", mayorEdad=" + mayorEdad
+                + ", nacimiento=" + nacimiento
                 + ", NumeroEstrellas=" + getNumeroEstrellas();
     }
-    
-    
-    
+
 }

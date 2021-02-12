@@ -29,8 +29,9 @@ public class Tiradores extends Jugadores {
     }
 
     public void setTirodetres(int tirodetres) {
-        if(tirodetres>=1 && tirodetres<=100)
-        this.tirodetres = tirodetres;
+        if (tirodetres >= 1 && tirodetres <= 100) {
+            this.tirodetres = tirodetres;
+        }
     }
 
     public int getTirodedos() {
@@ -38,8 +39,9 @@ public class Tiradores extends Jugadores {
     }
 
     public void setTirodedos(int tirodedos) {
-        if(tirodedos>=1 && tirodedos<=100)
-        this.tirodedos = tirodedos;
+        if (tirodedos >= 1 && tirodedos <= 100) {
+            this.tirodedos = tirodedos;
+        }
     }
 
     public int getManejodebalon() {
@@ -47,8 +49,9 @@ public class Tiradores extends Jugadores {
     }
 
     public void setManejodebalon(int manejodebalon) {
-        if(manejodebalon>=1 &&  manejodebalon<=100)
-        this.manejodebalon = manejodebalon;
+        if (manejodebalon >= 1 && manejodebalon <= 100) {
+            this.manejodebalon = manejodebalon;
+        }
     }
 
     @Override
@@ -65,18 +68,17 @@ public class Tiradores extends Jugadores {
         if (opc == 1) {
             //(T2P+MB)*0.95 * Núm. Estrellas/10
             double prob = (getTirodedos() + getManejodebalon()) * 0.95 * super.getNumeroEstrellas() / 10;
-            int ran=1+r.nextInt(100);
+            int ran = 1 + r.nextInt(100);
             System.out.println("Hizo tiro de 2 puntos");
             if (ran >= 1 && ran <= prob) {
                 System.out.println("¡¡¡Anotó!!!");
             } else {
                 System.out.println("...No anotó...");
             }
-        } 
-        else if (opc == 2) {
+        } else if (opc == 2) {
             // (TT+MB)*0.90 * Núm. Estrellas/10
             double prob = (getTirodetres() + getManejodebalon()) * 0.90 * super.getNumeroEstrellas() / 10;
-            int ran=1+r.nextInt(100);
+            int ran = 1 + r.nextInt(100);
             System.out.println("Hizo tiro de tres puntos");
             if (ran >= 1 && ran <= prob) {
                 System.out.println("¡¡¡Anotó!!!");
@@ -88,7 +90,7 @@ public class Tiradores extends Jugadores {
 
     @Override
     public String toString() {
-        return "Tiradores{" + "tirodetres=" + getTirodetres() + ", tiro de dos=" + getTirodedos() 
+        return "Tiradores{" + "tirodetres=" + getTirodetres() + ", tiro de dos=" + getTirodedos()
                 + ", manejodebalon=" + getManejodebalon() + '}';
     }
 
