@@ -102,8 +102,8 @@ public class Jugadores {
         }
     }
 
-    public void Atacar() {
-        System.out.println();
+    public boolean Atacar() {
+        return false;
     }
 
     @Override

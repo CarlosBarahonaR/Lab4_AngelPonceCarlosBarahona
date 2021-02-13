@@ -18,13 +18,18 @@ public class Lab4_AngelPonceCarlosBarahona {
 
     /**
      * @param args the command line arguments
+     *
      */
+    static ArrayList<String> j1 = new ArrayList(); //nombres y tipo
+    static ArrayList<Integer> j1p = new ArrayList();
+
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner lectura = new Scanner(System.in);
         int opcion = 0;
         ArrayList<Equipos> equipos = new ArrayList();
         ArrayList<Jugadores> jugadores = new ArrayList();
+
         while (opcion != 5) {
             System.out.println("    Seleccione una opcion\n"
                     + "1• Equipos\n"
@@ -390,42 +395,37 @@ public class Lab4_AngelPonceCarlosBarahona {
                 }
                 break;
                 case 3: {
-
-                    System.out.println("JUEGO");
-                    int ptsequipo1 = 0;
-                    int ptsequipo2 = 0;
-                    System.out.println("Que jugador tendra la pelota inicialmente?: ");
-                    System.out.println("1. Jugador 1");
-                    System.out.println("2. Jugador 2");
-                    System.out.print("Escoja: ");
-                    int opc = lectura.nextInt();
-                    while (opc != 1 && opc != 2) {
-                        System.out.println("Por favor, ingrese una opcion valida: ");
-                        System.out.println("1. Jugador 1");
-                        System.out.println("2. Jugador 2");
-                        System.out.print("Escoja: ");
-                        opc = lectura.nextInt();
-                    }
-                    System.out.println("J1 Ingrese posicion del equipo que quiere usar");
-                    for (int i = 0; i < equipos.size(); i++) {
-                        System.out.println(equipos.get(i).getNombre());
-                    }
-                    System.out.println("Escoja: ");
-                    int pos1 = lectura.nextInt();
-                    System.out.println("J2 Ingrese posicion del equipo que quiere usar");
-                    for (int i = 0; i < equipos.size(); i++) {
-                        System.out.println(equipos.get(i).getNombre());
-                    }
-                    System.out.println("Escoja: ");
-                    int pos2 = lectura.nextInt();
-                    while (pos2 == pos1) {
-                        System.out.println("Jugador 1 ya tiene ese equipo, elija otro: ");
-                        pos2 = lectura.nextInt();
-                    }
-                    //Empezando juego
-                    while (ptsequipo1 < 11 && ptsequipo2 < 11) {
-                        if (opc == 1) {
-                            System.out.println("Jugador 1 ");
+                    if (equipos.isEmpty()) {
+                        System.out.println("No hay equipos");
+                    } else {
+                        System.out.println("JUEGO");
+                        int ptsequipo1 = 0;
+                        int ptsequipo2 = 0;
+                        System.out.println("P1 Ingrese posicion del equipo que quiere usar");
+                        for (int i = 0; i < equipos.size(); i++) {
+                            System.out.println(equipos.get(i).getNombre());
+                        }
+                        System.out.println("Escoja: ");
+                        int pos1 = lectura.nextInt();
+                        System.out.println("P2 Ingrese posicion del equipo que quiere usar");
+                        for (int i = 0; i < equipos.size(); i++) {
+                            System.out.println(equipos.get(i).getNombre());
+                        }
+                        System.out.println("Escoja: ");
+                        int pos2 = lectura.nextInt();
+                        while (pos2 == pos1) {
+                            System.out.println("Jugador 1 ya tiene ese equipo, elija otro: ");
+                            pos2 = lectura.nextInt();
+                        }
+                        //Empezando juego
+                        while (ptsequipo1 < 11 && ptsequipo2 < 11) {
+                            System.out.println("Usuario 1 ");
+                            System.out.println("Escoja un jugador");
+                            for (int i = 0; i < equipos.get(pos1).getJugadores().size(); i++) {
+                                System.out.println(equipos.get(pos1).getJugadores().get(i).getNombre());
+                            }
+                            System.out.println("Ingrese: ");
+                            int posjug = lectura.nextInt();
                             System.out.println("1. Atacar");
                             System.out.println("2. Dar pase");
                             System.out.println("Ingrese (1 ó 2): ");
@@ -439,21 +439,53 @@ public class Lab4_AngelPonceCarlosBarahona {
                             }
                             switch (op1) {
                                 case 1:
-                                    System.out.println("Con que jugador desea atacar? Ingrese posicion");
-                                    for (int i = 0; i < equipos.get(pos1).getJugadores().size(); i++) {
-                                        System.out.println(equipos.get(pos1).getJugadores().get(i).getNombre());
-                                    }
-                                    System.out.println("Ingrese: ");
-                                    int posjug = lectura.nextInt();
+                                    if (equipos.get(pos1).getJugadores().get(posjug) instanceof Pateadores) {
+                                        if (equipos.get(pos1).getJugadores().get(posjug).Atacar() == true) {
+                                            equipos.get(pos1).getJugadores().get(posjug).Atacar();
+                                            ptsequipo1++;
+                                            //j1.add(equipos.get(pos1).getJugadores().get(posjug).getNombre()+" "+"Pateador");
 
+                                        } else {
+                                            equipos.get(pos1).getJugadores().get(posjug).Atacar();
+
+                                        }
+                                    } else {
+                                        System.out.println("1. Tiro de 3");
+                                        System.out.println("2. Tiro de 2");
+                                        System.out.println("Opcion: ");
+                                        int op = lectura.nextInt();
+                                        if (op == 1) {
+                                            if (equipos.get(pos1).getJugadores().get(posjug).Atacar() == true) {
+                                                equipos.get(pos1).getJugadores().get(posjug).Atacar();
+                                                ptsequipo1 += 3;
+                                                //j1.add(equipos.get(pos1).getJugadores().get(posjug).getNombre()+" "+"Pateador");
+                                            } else {
+                                                equipos.get(pos1).getJugadores().get(posjug).Atacar();
+
+                                            }
+                                        } else if (op == 2) {
+                                            if (op == 1) {
+                                                if (equipos.get(pos1).getJugadores().get(posjug).Atacar() == true) {
+                                                    equipos.get(pos1).getJugadores().get(posjug).Atacar();
+                                                    ptsequipo1 += 2;
+                                                    //j1.add(equipos.get(pos1).getJugadores().get(posjug).getNombre()+" "+"Pateador");
+                                                } else {
+                                                    equipos.get(pos1).getJugadores().get(posjug).Atacar();
+                                                }
+                                            }
+                                        }
+                                    }
                                     break;
                                 case 2:
+                                    System.out.println("Ingrese posicion a quien pasarle el balon: ");
+                                    int posbalon1 = lectura.nextInt();
 
                                     break;
 
                             }
-                        }
-                    }//Fin del juego
+
+                        }//Fin del juegon del juego
+                    }
 
                 }
             }
