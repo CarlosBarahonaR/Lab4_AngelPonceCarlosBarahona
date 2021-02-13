@@ -29,7 +29,8 @@ public class Lab4_AngelPonceCarlosBarahona {
             System.out.println("    Seleccione una opcion\n"
                     + "1• Equipos\n"
                     + "2• Jugadores\n"
-                    + "5• Salir");
+                    + "3• Juego\n"
+                    + "3• Salir");
             opcion = lectura.nextInt();
             switch (opcion) {
                 case 1: {
@@ -388,13 +389,84 @@ public class Lab4_AngelPonceCarlosBarahona {
 
                 }
                 break;
-                case 6: {
+                case 3: {
+
+                    System.out.println("JUEGO");
+                    int ptsequipo1 = 0;
+                    int ptsequipo2 = 0;
+                    System.out.println("Que jugador tendra la pelota inicialmente?: ");
+                    System.out.println("1. Jugador 1");
+                    System.out.println("2. Jugador 2");
+                    System.out.print("Escoja: ");
+                    int opc = lectura.nextInt();
+                    while (opc != 1 && opc != 2) {
+                        System.out.println("Por favor, ingrese una opcion valida: ");
+                        System.out.println("1. Jugador 1");
+                        System.out.println("2. Jugador 2");
+                        System.out.print("Escoja: ");
+                        opc = lectura.nextInt();
+                    }
+                    System.out.println("J1 Ingrese posicion del equipo que quiere usar");
+                    for (int i = 0; i < equipos.size(); i++) {
+                        System.out.println(equipos.get(i).getNombre());
+                    }
+                    System.out.println("Escoja: ");
+                    int pos1 = lectura.nextInt();
+                    System.out.println("J2 Ingrese posicion del equipo que quiere usar");
+                    for (int i = 0; i < equipos.size(); i++) {
+                        System.out.println(equipos.get(i).getNombre());
+                    }
+                    System.out.println("Escoja: ");
+                    int pos2 = lectura.nextInt();
+                    while (pos2 == pos1) {
+                        System.out.println("Jugador 1 ya tiene ese equipo, elija otro: ");
+                        pos2 = lectura.nextInt();
+                    }
+                    //Empezando juego
+                    while (ptsequipo1 < 11 && ptsequipo2 < 11) {
+                        if (opc == 1) {
+                            System.out.println("Jugador 1 ");
+                            System.out.println("1. Atacar");
+                            System.out.println("2. Dar pase");
+                            System.out.println("Ingrese (1 ó 2): ");
+                            int op1 = lectura.nextInt();
+                            while (op1 != 1 && op1 != 2) {
+                                System.out.println("Por favor, ingrese una opcion valida: ");
+                                System.out.println("1. Atacar");
+                                System.out.println("2. Dar pase");
+                                System.out.println("Ingrese (1 ó 2): ");
+                                op1 = lectura.nextInt();
+                            }
+                            switch (op1) {
+                                case 1:
+                                    System.out.println("Con que jugador desea atacar? Ingrese posicion");
+                                    for (int i = 0; i < equipos.get(pos1).getJugadores().size(); i++) {
+                                        System.out.println(equipos.get(pos1).getJugadores().get(i).getNombre());
+                                    }
+                                    System.out.println("Ingrese: ");
+                                    int posjug = lectura.nextInt();
+
+                                    break;
+                                case 2:
+
+                                    break;
+
+                            }
+                        }
+                    }//Fin del juego
 
                 }
             }
             break;
 
         }
+    }
+
+    public void FindelJuego(int ptsequipo1, int ptsequipo2) {
+        System.out.println("Puntos anotado por equipo 1: " + ptsequipo1);
+
+        System.out.println("Puntos anotados por equipo 2: " + ptsequipo2);
+
     }
 
 }
